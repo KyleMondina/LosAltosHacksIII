@@ -7,7 +7,7 @@ const path = require('path');
 const server = app.listen(process.env.PORT);
 const io = socket(server);
 
-app.use('/Public', express.static(path.join(__dirname, 'Public')));
+app.use(express.static(path.join(__dirname, 'Public')));
 app.use(routes);
 
 
@@ -16,11 +16,33 @@ io.on('connection', socket => {
     console.log('made socket connection');
     
     socket.on('gameCreated', () => io.sockets.emit('enableGame'));
-    socket.on('problemSubmited', data => io.sockets.emit('problemSent', data));
-    socket.on('answerSubmited', data => io.sockets.emit('answerSent', data));
+    socket.on('problemSubmited', data => {
+        console.log(data);
+        io.sockets.emit('problemSent', data)
+    });
+    socket.on('answerSubmited', data => {
+        console.log(data.studentName);
+        io.sockets.emit('answerSent', data);
+        
+    });
     socket.on('pauseGame', () => io.sockets.emit('gamePaused'));
     socket.on('resumeGame', () => io.sockets.emit('gameResumed'));
-    socket.on('endGame', data => io.sockets.emit('gameEnded', data));
+    
+    socket.on('endGame', data => {
+        console.log(data);
+        io.sockets.emit('gameEnded', data)
+        
+    });
+    
+    socket.on('passWinnerData', data => {
+        console.log(data);
+        console.log("hi");
+        var newArray=[];
+        var sentArray = newArray.push(data)
+        
+        io.sockets.emit("dataToLB", sentArray)
+        
+    });
     
 });
 

@@ -7,32 +7,75 @@
       <link href="https://fonts.googleapis.com/css?family=Share" rel="stylesheet">
       <title>Teacher</title>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
-      <script
-   src="https://code.jquery.com/jquery-3.3.1.js"
-   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-   crossorigin="anonymous"></script>
+      <script src="https://www.desmos.com/api/v1.0/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+      
+      
+     
+      <script type="text/javascript">
+           window.MathJax = {
+             tex2jax: {
+               inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+               processEscapes: true
+             }
+           };
+      </script>
+      <script type="text/javascript"  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <link href="index.css" rel="stylesheet" type="text/css">
+      <link href="https://fonts.googleapis.com/css?family=Share" rel="stylesheet">
+      <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
    </head>
+   
    <body>
-      <h1 style="text-align: center; text-decoration: underline;">Teacher</h1>
+      <div id="heading">
+         <h1>Teacher</h1>
+      </div>
       
       <div id="teacherActions">
          <h2>Controls</h2>
          <button id="createGameBTN">Create Game</button> 
-         <button id="submitProblemBTN" onclick="">Submit Problem</button>
-         <button id="">Resume Game</button>
-         <button id="">End Game</button>
-         <button id="">Give Score</button>
-      </div>
-      
-      <div id="question">
-         <p>Placeholder text</p>
+         <div id="calculator" style="width: 600px; height: 400px; float: right; clear: right;">
+            <p style="font-size: 15px;">Graphing calculator provided for your convenience.</p>
+         </div>
+         
+         <script>
+            /* global Desmos*/
+            var elt = document.getElementById('calculator');
+            var calculator = Desmos.GraphingCalculator(elt);
+            calculator.setExpression({id:'graph1'});
+         </script>
+         
+         <button id="resumeGameBTN">Resume Game</button> 
+         <button id="endGameBTN">End Game</button> 
+         
+         <form>
+            <input type="textarea" id="item">
+         </form>
+         
+         <button id="enterProblemBTN" onclick="addRow();">Enter</button> <br>
       </div>
       
       <div id="output">
-         <p>Student Responses:</p>
+          <table id="table">
+             <tr>
+                 <th style="text-decoration: underline;">Your problem:</th>
+             </tr>
+         </table>
+      </div>
+      <button id ="submitProblemBTN">Submit problem</button> <br>
+      
+      
+     
+      <div id = "studentInfo">
+         <h4>Student Info</h4>
+         <p>Student Name:</p>
+         <p id = "studentName">who ia this?</p>
+         <div id ="studentWork"></div>
+         <p>Give Score</p>
+         <input id = "studentScore"></input>
       </div>
       
       
+
       
    </body>
    <script src = './teacher.js'></script>

@@ -4,7 +4,6 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Student</title>
-      <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       <script src="https://www.desmos.com/api/v1.0/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
       <script
       src="https://code.jquery.com/jquery-3.3.1.js"
@@ -19,15 +18,27 @@
              }
            };
       </script>
+      <script type="text/javascript"  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       <link href="index.css" rel="stylesheet" type="text/css">
       <link href="https://fonts.googleapis.com/css?family=Share" rel="stylesheet">
    </head>
    <body>
-      <h1 style="text-align: center; text-decoration: underline">Student</h1>
+
+      
+      <div id="heading">
+          <h1>Student</h1>
+          <h1 id ="gameState">Game State</h1>
+      </div>
       
       <div id="problem">
          <h2>Problem:</h2>
       </div>
+      
+      <div id = "studentInfo">
+         <p>Enter Your Name below</p>
+         <input id = "studentName"></input>
+      </div>
+      
       
       <!-- Practice -->
       <div id="output">
@@ -35,44 +46,49 @@
       </div>
       
       <div id="textInput">
-         <div id="desmos" style="width: 600px; height: 400px;"></div>
+         <div id="desmos" style="width: 600px; height: 400px;">
+            <p style="font-size: 15px;" >Graphing calculator provided for your convenience.</p>
+         </div>
          <h2>Text Input</h2>
+         <button onclick="clickMe(); ">Record Graph</button>
+         
+         
+         
          <p id="paragraph"></p>
       </div>
       
-      <div>
-         <form>
+       <script>
+         /*global Desmos*/
+          var elt = document.getElementById('desmos');
+           var calculator = Desmos.GraphingCalculator(elt);
+           calculator.setExpression({id:'graph1'});
+         
+         
+         </script>
+      
+      
+      
+      <div id ="input">
+         <form> 
             <input type="textarea" name="Enter equation here" id="item"/>
-            <!--<input type="button" value="Submit" onclick="addRow()"/>-->
          </form>
-         <button onclick="addRow(); id">Enter</button>
-         
-         
-         <form>
-                     <input type="textarea" name="" rows="4" cols="50"/>
-         </form>
-         
-         
-         
-          <table id="table">
+         <button id="addText" onclick="addRow();" id="MathInput" size="50" onchange="UpdateMath(this.value)">Enter math equation</button>
+      </div> 
+      <div id="MathOutput">
+         <table id="table1">
              <tr>
-                 <th style="text-decoration: underline;">Items</th>
+                 <th style="text-decoration: underline;">Answers</th>
              </tr>
          </table>
       </div>
       
-      <script>
-           /* global Desmos */
-           var elt = document.getElementById('desmos');
-           var calculator = Desmos.GraphingCalculator(elt);
-           calculator.setExpression({id:'graph1'});
-      </script>
+      
       
       <div id="input">
-         <button id="submitAnswerBTN">Submit Your Work</button>
+         <button id="submitAnswerBTN">Submit Your Answers</button>
       </div>
-      
       
    </body>
    <script src = './student.js'></script>
+   <script src = './mathJax.js'></script>
 </html>
