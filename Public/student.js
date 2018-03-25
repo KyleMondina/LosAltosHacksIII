@@ -20,12 +20,12 @@ img.src = thumbnail;
 
 
     var table = document.getElementById("table1");
-    
+
     var row= document.createElement("tr");
     console.log(row);
     var td1 = document.createElement("td");
-    
-    
+
+
     td1.innerHTML = `<img src=${thumbnail}></img>`;
 
 row.appendChild(td1)
@@ -46,35 +46,35 @@ function addRow() {
    "use strict";
 
     var table = document.getElementById("table1");
-    
+
     var row= document.createElement("tr");
     console.log(row);
     var td1 = document.createElement("td");
 
     td1.innerHTML = document.getElementById("item").value;
-  
+
 
     row.appendChild(td1);
-    
+
 
     table.children[0].appendChild(row);
-    
+
     (function () {
          var script = document.createElement("script");
          script.type = "text/javascript";
          script.src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML";
          document.getElementsByTagName("head")[0].appendChild(script);
     })();
-    
+
     (function () {
          var script = document.createElement("script");
          script.type = "text/javascript";
          script.src = "mathJax.js";
          document.getElementsByTagName("head")[0].appendChild(script);
-    })(); 
-    
+    })();
+
     document.getElementById("item").value = ""; //Clears the textbox when the user clicks the button
-    
+
 }
 
 
@@ -87,14 +87,14 @@ $(document).ready(function(){
 function addInput(){
     const element = $("#input").find('input').val();
     const output  = $("#output");
-    
+
     output.appendChild(`<p> ${element}</p>`);
 }
 
 
 
 //Socket functions
-const socket = io.connect();
+const socket = io.connect('http://localhost:4000');
 
 //buttons and headers
 const submitAnswerBTN = $("#submitAnswerBTN");
@@ -115,7 +115,7 @@ submitAnswerBTN.click(() =>{
 
 socket.on('enableGame', () => {
     gameState.html("Game Started");
-    submitAnswerBTN.prop("disabled",false);    
+    submitAnswerBTN.prop("disabled",false);
 });
 socket.on('problemSent', data => {
     const problem = $("#problem");
@@ -125,7 +125,7 @@ socket.on('gamePaused', () => {
     gameState.html("Game Paused");
     submitAnswerBTN.prop("disabled",true);
 });
-socket.on('gameResumed', () => {
+socket.on('gameResumed', data => {
     gameState.html("Playing");
     submitAnswerBTN.prop("disabled",false);
 });
@@ -133,7 +133,3 @@ socket.on('gameEnded', data => {
     socket.emit("passWinnerData", data);
     window.location.replace("./leaderBoard.html");
 });
-
-
-
-
