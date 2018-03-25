@@ -78,11 +78,7 @@ function addRow() {
 }
 
 
-$(document).ready(function(){
-    $("#addText").click(function(){
-        $('#alltext').append($("#item").val());
-    });
-});
+
 
 function addInput(){
     const element = $("#input").find('input').val();
@@ -105,7 +101,6 @@ gameState.html("Game Did Not Start Yet");
 
 //emit
 submitAnswerBTN.click(() =>{
-    $("#input").find("#item").attr('value', '');
     const studentName = $("#studentInfo").find("#studentName").val();
     const studentAnswer = $("#MathOutput").html();
     socket.emit('answerSubmited', {studentAnswer,studentName});

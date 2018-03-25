@@ -36,19 +36,13 @@ io.on('connection', socket => {
     });
 
     socket.on('passWinnerData', data => {
-<<<<<<< HEAD
-       
-
-        io.sockets.emit('dataToLB', JSON.stringify(data) )
-        
-=======
       console.log('passWinnerDAta');
         console.log(data);
 
 
         io.sockets.emit('dataToLB', data);
 
->>>>>>> 3b81d3f83a7803ea4196bbf83cf6034903fc4df5
+
     });
 
 });
