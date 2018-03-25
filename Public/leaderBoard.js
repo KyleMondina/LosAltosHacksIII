@@ -36,7 +36,7 @@ function clickMe(){
         document.writeln("<tr>");
         document.writeln("<td>");
          document.writeln(nestedArray[i].name);
-        document.writeln(nestedArray[i].score);
+        document.writeln(nestedArray[i].score) + "<br>";
         document.writeln("</td>");
         document.writeln("</tr>");
     }
