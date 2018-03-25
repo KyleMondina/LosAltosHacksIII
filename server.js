@@ -36,11 +36,10 @@ io.on('connection', socket => {
     
     socket.on('passWinnerData', data => {
         console.log(data);
-        console.log("hi");
-        var newArray=[];
-        var sentArray = newArray.push(data)
+        var array = {};
+        array.push(data)
         
-        io.sockets.emit("dataToLB", sentArray)
+        io.sockets.emit('dataToLB', array)
         
     });
     

@@ -130,8 +130,6 @@ socket.on('gameResumed', () => {
     submitAnswerBTN.prop("disabled",false);
 });
 socket.on('gameEnded', data => {
-    alert("hi");
-    alert(data);
     socket.emit("passWinnerData", data);
     window.location.replace("./leaderBoard.html");
 });

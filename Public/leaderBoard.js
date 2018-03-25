@@ -1,5 +1,11 @@
 let lbArray = [];
-  
+
+
+const socket = io.connect();
+socket.on('dataToLB', data => {
+    alert(data);
+    lbArray = data;
+});
   
 function clickMe(){
    // var nestedArray=[{name:"Bob", score:3}, {name: "Sally", score:5}];
@@ -31,6 +37,10 @@ function clickMe(){
         document.writeln("</tr>");
     }
  }
+ 
+ function check(){
+     alert(lbArray);
+ }
   
 function sort(array){
   for (let i = 0; i<array.length; i++){
@@ -49,10 +59,5 @@ function sort(array){
 
 
 //socket commands
-const socket = io.connect();
-socket.on('dataToLB', data =>{
-    sort(data);
-    lbArray = data;
-    
-})
+
 
