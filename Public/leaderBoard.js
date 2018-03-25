@@ -2,7 +2,7 @@ let lbArray = [];
 
 
 
-const socket = io.connect('http://localhost:4000');
+const socket = io.connect();
 socket.on('dataToLB', data => {
   const arrayData = data.slice();
   sort(arrayData);
