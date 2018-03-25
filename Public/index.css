@@ -89,3 +89,7 @@ input[type=textarea] {
 #leaderboard {
     border:1px;
 }
+
+#studentInfo {
+    background-color:white;
+}

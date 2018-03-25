@@ -35,11 +35,9 @@ io.on('connection', socket => {
     });
     
     socket.on('passWinnerData', data => {
-        console.log(data);
-        var array = {};
-        array.push(data)
-        
-        io.sockets.emit('dataToLB', array)
+       
+
+        io.sockets.emit('dataToLB', JSON.stringify(data) )
         
     });
     
