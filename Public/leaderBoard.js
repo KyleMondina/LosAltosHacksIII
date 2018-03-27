@@ -3,18 +3,11 @@ let lbArray = [];
 
 
 
-<<<<<<< HEAD
-const socket = io.connect(LOCAL);
-=======
-const socket = io.connect();
->>>>>>> 82535ce8dd3c80165b6698d86f93d764eefe253b
-socket.on('dataToLB', data => {
-  const arrayData = data.slice();
-  sort(arrayData);
-  lbArray = arrayData
-  console.log(lbArray);
-});
-//socket.on('gameResumed', data => alert(data));
+const socket = io.connect(`${LOCAL}`);
+$(document).ready(() => socket.emit('leaderBoardLoaded'));
+socket.on('winnerDataSent', data => lbArray = data);
+
+
 
 function clickMe(){
    // var nestedArray=[{name:"Bob", score:3}, {name: "Sally", score:5}];

@@ -90,11 +90,7 @@ function addInput(){
 
 
 //Socket functions
-<<<<<<< HEAD
-const socket = io.connect(LOCAL);
-=======
-const socket = io.connect();
->>>>>>> 82535ce8dd3c80165b6698d86f93d764eefe253b
+const socket = io.connect(`${LOCAL}`);
 
 //buttons and headers
 const submitAnswerBTN = $("#submitAnswerBTN");
@@ -128,7 +124,6 @@ socket.on('gameResumed', data => {
     gameState.html("Playing");
     submitAnswerBTN.prop("disabled",false);
 });
-socket.on('gameEnded', data => {
-    socket.emit("passWinnerData", data);
+socket.on('gameEnded', () => {
     window.location.replace("./leaderBoard.html");
 });

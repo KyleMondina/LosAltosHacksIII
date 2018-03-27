@@ -11,17 +11,17 @@ app.use(express.static(path.join(__dirname, 'Public')));
 app.use(routes);
 
 
-
+let winnerData = [];
 io.on('connection', socket => {
     console.log('made socket connection');
 
     socket.on('gameCreated', () => io.sockets.emit('enableGame'));
     socket.on('problemSubmited', data => {
-        console.log(data);
+        console.log("a teacher has submitted a data:" + data);
         io.sockets.emit('problemSent', data)
     });
     socket.on('answerSubmited', data => {
-        console.log(data.studentName);
+        console.log(data.studentName + "has submitted a work");
         io.sockets.emit('answerSent', data);
 
     });
@@ -29,20 +29,15 @@ io.on('connection', socket => {
     socket.on('resumeGame', data => io.sockets.emit('gameResumed', data));
 
     socket.on('endGame', data => {
-      console.log('endGAme');
-        console.log(data);
-        io.sockets.emit('gameEnded', data)
-
+      console.log('Game Ended');
+      console.log(data);
+      io.sockets.emit('gameEnded');
+      winnerData = data;
     });
-
-    socket.on('passWinnerData', data => {
-      console.log('passWinnerDAta');
-        console.log(data);
-
-
-        io.sockets.emit('dataToLB', data);
-
-
+    socket.on('leaderBoardLoaded', () => {
+      console.log("data to be sent to leaderBoard:" + winnerData);
+      io.sockets.emit('winnerDataSent', winnerData);
+      winnerData = [];
     });
 
 });
