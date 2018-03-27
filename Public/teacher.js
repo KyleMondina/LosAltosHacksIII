@@ -45,7 +45,11 @@ const student = (name,score) =>{
 
 
 //Socket Functions
+<<<<<<< HEAD
 const socket = io.connect(LOCAL);
+=======
+const socket = io.connect();
+>>>>>>> 82535ce8dd3c80165b6698d86f93d764eefe253b
 
 //buttons and headers
 const createGameBTN = $('#teacherActions').find("#createGameBTN");

@@ -3,7 +3,11 @@ let lbArray = [];
 
 
 
+<<<<<<< HEAD
 const socket = io.connect(LOCAL);
+=======
+const socket = io.connect();
+>>>>>>> 82535ce8dd3c80165b6698d86f93d764eefe253b
 socket.on('dataToLB', data => {
   const arrayData = data.slice();
   sort(arrayData);
@@ -37,7 +41,7 @@ function clickMe(){
         document.writeln("<tr>");
         document.writeln("<td>");
          document.writeln(nestedArray[i].name);
-        document.writeln(nestedArray[i].score);
+        document.writeln(nestedArray[i].score) + "<br>";
         document.writeln("</td>");
         document.writeln("</tr>");
     }

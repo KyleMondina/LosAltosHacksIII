@@ -4,7 +4,7 @@ const routes = require('./routes.js');
 const socket = require('socket.io');
 const path = require('path');
 
-const server = app.listen(4000);
+const server = app.listen(process.env.PORT || 4000);
 const io = socket(server);
 
 app.use(express.static(path.join(__dirname, 'Public')));
