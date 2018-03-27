@@ -1,4 +1,4 @@
-/* global $ */
+const LOCAL = 'http://localhost:4000';
 
 
 
@@ -90,7 +90,7 @@ function addInput(){
 
 
 //Socket functions
-const socket = io.connect('http://localhost:4000');
+const socket = io.connect(LOCAL);
 
 //buttons and headers
 const submitAnswerBTN = $("#submitAnswerBTN");

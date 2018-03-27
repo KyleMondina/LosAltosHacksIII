@@ -1,8 +1,9 @@
+const LOCAL = 'http://localhost:4000';
 let lbArray = [];
 
 
 
-const socket = io.connect('http://localhost:4000');
+const socket = io.connect(LOCAL);
 socket.on('dataToLB', data => {
   const arrayData = data.slice();
   sort(arrayData);
