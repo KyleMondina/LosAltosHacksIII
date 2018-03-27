@@ -24,56 +24,63 @@
    </head>
    <body>
 
-      
+
       <div id="heading">
           <h1>Student</h1>
           <h1 id ="gameState">Game State</h1>
       </div>
-      
+
       <div id="problem">
          <h2>Problem:</h2>
       </div>
-      
+
       <div id = "studentInfo">
          <p>Enter Your Name below</p>
-         <input id = "studentName"></input>
+         <input id = "studentName" size="40"></input>
       </div>
-      
-      
+
+
+      <hr>
+
       <!-- Practice -->
       <div id="output">
-         
+
       </div>
-      
+
       <div id="textInput">
          <div id="desmos" style="width: 600px; height: 400px;">
             <p style="font-size: 15px;" >Graphing calculator provided for your convenience.</p>
          </div>
-         <h2>Text Input</h2>
+         <h2>Input your Answer</h2>
          <button onclick="clickMe(); ">Record Graph</button>
-         
-         
-         
+
+
+
          <p id="paragraph"></p>
       </div>
-      
+
        <script>
          /*global Desmos*/
           var elt = document.getElementById('desmos');
            var calculator = Desmos.GraphingCalculator(elt);
            calculator.setExpression({id:'graph1'});
-         
-         
+
+
          </script>
-      
-      
-      
+
+
+
+
       <div id ="input">
-         <form> 
+         <form>
             <input type="textarea" name="Enter equation here" id="item"/>
          </form>
-         <button id="addText" onclick="addRow();" id="MathInput" size="50" onchange="UpdateMath(this.value)">Enter math equation</button>
-      </div> 
+         <button id="addText" onclick="addRow();" id="MathInput" size="50" onchange="UpdateMath(this.value)">Enter answer</button>
+
+      </div>
+
+      <br>
+
       <div id="MathOutput">
          <table id="table1">
              <tr>
@@ -81,13 +88,14 @@
              </tr>
          </table>
       </div>
-      
-      
-      
+
+
+
       <div id="input">
          <button id="submitAnswerBTN">Submit Your Answers</button>
       </div>
-      
+
+
    </body>
    <script src = './student.js'></script>
    <script src = './mathJax.js'></script>
