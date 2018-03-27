@@ -3,7 +3,7 @@ let lbArray = [];
 
 
 
-const socket = io.connect(`${LOCAL}`);
+const socket = io.connect();
 $(document).ready(() => socket.emit('leaderBoardLoaded'));
 socket.on('winnerDataSent', data => lbArray = data);
 
