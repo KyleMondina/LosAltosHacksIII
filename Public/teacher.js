@@ -78,7 +78,13 @@ resumeGameBTN.click(() => {
 });
 
 endGameBTN.click(() => {
-    socket.emit("endGame", lbArray)
+  const studentName = $("#studentInfo").find("#studentName");
+  const studentScore = $("#studentInfo").find("#studentScore");
+  const studentWork = $("#studentInfo").find("#studentWork");
+  const studentObj = student(studentName.text(),studentScore.val());
+  lbArray.push(studentObj);
+
+  socket.emit("endGame", lbArray)
 });
 
 //listen
