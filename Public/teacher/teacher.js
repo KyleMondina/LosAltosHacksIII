@@ -27,7 +27,7 @@ function addRow() {
     (function () {
          var script = document.createElement("script");
          script.type = "text/javascript";
-         script.src = "mathJax.js";
+         script.src = "../mathJax.js";
          document.getElementsByTagName("head")[0].appendChild(script);
     })();
 
@@ -45,7 +45,7 @@ const student = (name,score) =>{
 
 
 //Socket Functions
-const socket = io.connect();
+const socket = io.connect(LOCAL);
 
 //buttons and headers
 const createGameBTN = $('#teacherActions').find("#createGameBTN");

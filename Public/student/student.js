@@ -69,7 +69,7 @@ function addRow() {
     (function () {
          var script = document.createElement("script");
          script.type = "text/javascript";
-         script.src = "mathJax.js";
+         script.src = "../mathJax.js";
          document.getElementsByTagName("head")[0].appendChild(script);
     })();
 
@@ -90,7 +90,7 @@ function addInput(){
 
 
 //Socket functions
-const socket = io.connect();
+const socket = io.connect(LOCAL);
 
 //buttons and headers
 const submitAnswerBTN = $("#submitAnswerBTN");
@@ -125,5 +125,5 @@ socket.on('gameResumed', data => {
     submitAnswerBTN.prop("disabled",false);
 });
 socket.on('gameEnded', () => {
-    window.location.replace("./leaderBoard.html");
+    window.location.replace("../leaderBoard/leaderBoard.html");
 });

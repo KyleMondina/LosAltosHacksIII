@@ -7,9 +7,10 @@ const path = require('path');
 const server = app.listen(process.env.PORT || 4000);
 const io = socket(server);
 
-app.use(express.static(path.join(__dirname, 'Public')));
-app.use(routes);
 
+app.use(routes);
+app.use(express.static(path.join(__dirname, '/Public')));
+app.use("/Public",express.static(path.join(__dirname, '/Public')));
 
 let winnerData = [];
 io.on('connection', socket => {
