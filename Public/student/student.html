@@ -41,42 +41,20 @@
 
 
       <hr>
-
-      <!-- Practice -->
-      <div id="output">
-
-      </div>
-
       <div id="textInput">
-         <div id="desmos" style="width: 600px; height: 400px;">
+         <div id="calculator" style="width: 600px; height: 400px;">
             <p style="font-size: 15px;" >Graphing calculator provided for your convenience.</p>
          </div>
          <h2>Input your Answer</h2>
          <button onclick="clickMe(); ">Record Graph</button>
-
-
-
          <p id="paragraph"></p>
       </div>
-
-       <script>
-         /*global Desmos*/
-          var elt = document.getElementById('desmos');
-           var calculator = Desmos.GraphingCalculator(elt);
-           calculator.setExpression({id:'graph1'});
-
-
-         </script>
-
-
-
 
       <div id ="input">
          <form>
             <input type="textarea" name="Enter equation here" id="item"/>
          </form>
          <button id="addText" onclick="addRow();" id="MathInput" size="50" onchange="UpdateMath(this.value)">Enter answer</button>
-
       </div>
 
       <br>
@@ -89,14 +67,12 @@
          </table>
       </div>
 
-
-
       <div id="input">
          <button id="submitAnswerBTN">Submit Your Answers</button>
       </div>
 
-
    </body>
+   <script src = '../desmos.js'></script>
    <script src = './student.js'></script>
    <script src = '../mathJax.js'></script>
 </html>

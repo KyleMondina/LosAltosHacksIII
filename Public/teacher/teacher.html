@@ -25,45 +25,29 @@
       <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
    </head>
 
-
-
-
    <body>
 
       <div id="heading">
          <h1>Teacher</h1>
       </div>
 
-
       <div id="teacherActions">
          <h2>Controls</h2>
          <button id="createGameBTN">Create Game</button>
          <div id="calculator" style="width: 600px; height: 400px; float: right; clear: right;">
             <p style="font-size: 15px;">Graphing calculator provided for your convenience.</p>
-         </div>
-
-         <script>
-            /* global Desmos*/
-            var elt = document.getElementById('calculator');
-            var calculator = Desmos.GraphingCalculator(elt);
-            calculator.setExpression({id:'graph1'});
-         </script>
-
-         <button id="resumeGameBTN">Resume Game</button>
-
-         <button id="endGameBTN">End Game</button><br><br>
-
-         <form>
-            <input type="textarea" id="item"> &nbsp;
-         </form>
-
-         <button id="enterProblemBTN" onclick="addRow();">Enter Problem</button> <br>
-
-         <br>
       </div>
 
+       <button id="resumeGameBTN">Resume Game</button>
+       <button id="endGameBTN">End Game</button><br><br>
 
+       <form>
+          <input type="textarea" id="item"> &nbsp;
+       </form>
 
+       <button id="enterProblemBTN" onclick="addRow();">Enter Problem</button> <br>
+
+       <br>
 
       <div id="output">
           <table id="table">
@@ -71,12 +55,9 @@
                  <th style="text-decoration: underline;">Your problem:</th>
              </tr>
          </table>
-
       </div>
+
       <button id ="submitProblemBTN">Send problem to students</button>
-
-
-
 
       <div id = "studentInfo">
          <h4>Student Info</h4>
@@ -86,12 +67,9 @@
 
          Give Score <br>
          <input id = "studentScore" ></input>
-
       </div>
 
-
-
-
    </body>
+   <script src = '../desmos.js'></script>
    <script src = './teacher.js'></script>
 </html>
