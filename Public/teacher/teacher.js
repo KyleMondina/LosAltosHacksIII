@@ -17,19 +17,19 @@ function addRow() {
 
     table.children[0].appendChild(row);
 
-    (function () {
+    setTimeout(function () {
          var script = document.createElement("script");
          script.type = "text/javascript";
          script.src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML";
          document.getElementsByTagName("head")[0].appendChild(script);
-    })();
+    }, 70);
 
-    (function () {
+    setTimeout(function () {
          var script = document.createElement("script");
          script.type = "text/javascript";
          script.src = "../mathJax.js";
          document.getElementsByTagName("head")[0].appendChild(script);
-    })();
+    }, 100);
 
     document.getElementById("item").value = ""; //Clears the textbox when the user clicks the button
 
