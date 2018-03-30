@@ -90,7 +90,7 @@ function addInput(){
 
 
 //Socket functions
-const socket = io.connect();
+const socket = io.connect(LOCAL);
 
 //buttons and headers
 const submitAnswerBTN = $("#submitAnswerBTN");
