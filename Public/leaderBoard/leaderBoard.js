@@ -1,7 +1,7 @@
 const LOCAL = 'http://localhost:4000';
 let lbArray = [];
 
-const socket = io.connect(LOCAL);
+const socket = io.connect();
 socket.emit('leaderBoardLoaded');
 socket.on('winnerDataSent', data => lbArray = data);
 

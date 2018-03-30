@@ -58,7 +58,7 @@ function addRow() {
 
 
     table.children[0].appendChild(row);
-    
+
     setTimeout(function () {
          var script = document.createElement("script");
          script.type = "text/javascript";
@@ -90,7 +90,7 @@ function addInput(){
 
 
 //Socket functions
-const socket = io.connect(LOCAL);
+const socket = io.connect();
 
 //buttons and headers
 const submitAnswerBTN = $("#submitAnswerBTN");
