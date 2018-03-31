@@ -1,6 +1,26 @@
 const LOCAL = 'http://localhost:4000';
 let nameOfStudent = "";
 
+function clickMe(){
+  let thumbnail = calculator.screenshot({
+    width: 200,
+    height: 200,
+    targetPixelRatio: 2
+  });
+  let img = document.createElement('img');
+  img.width = 50;
+  img.height = 50;
+  img.src = thumbnail;
+  let table = $("#output").find("#studentProblem").find("#table")
+  let row= document.createElement("tr");
+  console.log(row);
+  let td1 = document.createElement("td");
+
+  td1.innerHTML = `<img src=${thumbnail}></img>`;
+  row.appendChild(td1)
+  table.append(row);
+}
+
 function addRow() {
    "use strict";
 
@@ -48,7 +68,10 @@ const endGameBTN = $("#teacherActions").find("#endGameBTN");
 let lbArray = [];
 
 //emit
-createGameBTN.click(() =>socket.emit('gameCreated'));
+createGameBTN.click(() =>{
+  socket.emit('gameCreated')
+  createGameBTN.css("background-color","gray")
+});
 submitProblemBTN.click(() => {
     const teacherProblem = $("#output").find("#studentProblem").html();
     socket.emit("problemSubmited", teacherProblem);

@@ -66,6 +66,7 @@ const submitAnswerBTN = $("#MathOutput").find("#submitAnswerBTN");
 const gameState = $("#heading").find("#gameState");
 //default behavior
 submitAnswerBTN.prop("disabled",true);
+submitAnswerBTN.css("background-color", "gray");
 gameState.html("Game Did Not Start Yet");
 
 //emit
@@ -80,6 +81,7 @@ submitAnswerBTN.click(() =>{
 socket.on('enableGame', () => {
     gameState.html("Game Started");
     submitAnswerBTN.prop("disabled",false);
+    submitAnswerBTN.css("background-color", "rgb(0, 200, 220)");
 });
 socket.on('problemSent', data => {
     const problem = $("#problem");
@@ -88,10 +90,12 @@ socket.on('problemSent', data => {
 socket.on('gamePaused', () => {
     gameState.html("Game Paused");
     submitAnswerBTN.prop("disabled",true);
+    submitAnswerBTN.css("background-color", "gray");
 });
 socket.on('gameResumed', data => {
     gameState.html("Playing");
     submitAnswerBTN.prop("disabled",false);
+    submitAnswerBTN.css("background-color", "rgb(0, 200, 220)");
 });
 socket.on('gameEnded', () => {
     window.location.replace("../leaderBoard/leaderBoard.html");
