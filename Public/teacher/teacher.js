@@ -3,19 +3,14 @@ const LOCAL = 'http://localhost:4000';
 function addRow() {
    "use strict";
 
-    var table = document.getElementById("table");
-
-    var row = document.createElement("tr");
-    console.log(row);
-    var td1 = document.createElement("td");
+    let table = $("#output").find("#studentProblem").find("#table");
+    let row = document.createElement("tr");
+    let td1 = document.createElement("td");
 
     td1.innerHTML = document.getElementById("item").value;
-
-
     row.appendChild(td1);
 
-
-    table.children[0].appendChild(row);
+    table.append(row);
 
     setTimeout(function () {
          var script = document.createElement("script");
@@ -32,7 +27,6 @@ function addRow() {
     }, 100);
 
     document.getElementById("item").value = ""; //Clears the textbox when the user clicks the button
-
 }
 
 const student = (name,score) =>{
@@ -42,22 +36,20 @@ const student = (name,score) =>{
     return studentObj;
 }
 
-
-
 //Socket Functions
 const socket = io.connect(LOCAL);
 
 //buttons and headers
 const createGameBTN = $('#teacherActions').find("#createGameBTN");
-const submitProblemBTN = $("#submitProblemBTN");
-const resumeGameBTN = $("#teacherActions").find("#resumeGameBTN");
+const submitProblemBTN = $("#output").find("#submitProblemBTN");
+const resumeGameBTN = $("#studentInfo").find("#resumeGameBTN");
 const endGameBTN = $("#teacherActions").find("#endGameBTN");
 let lbArray = [];
 
 //emit
 createGameBTN.click(() =>socket.emit('gameCreated'));
 submitProblemBTN.click(() => {
-    const teacherProblem = $("#output").html();
+    const teacherProblem = $("#output").find("#studentProblem").html();
     socket.emit("problemSubmited", teacherProblem);
 });
 resumeGameBTN.click(() => {
@@ -68,20 +60,18 @@ resumeGameBTN.click(() => {
     const studentObj = student(studentName.text(),studentScore.val());
     lbArray.push(studentObj);
 
-    studentName.html("");
+    studentName.html("Student Name: ");
     studentScore.val("");
     studentWork.html("");
 
-
     socket.emit("resumeGame", lbArray);
-
 });
 
 endGameBTN.click(() => {
   const studentName = $("#studentInfo").find("#studentName");
   const studentScore = $("#studentInfo").find("#studentScore");
   const studentWork = $("#studentInfo").find("#studentWork");
-  const studentObj = student(studentName.text(),studentScore.val());
+  const studentObj = student(studentName.text().slice(14),studentScore.val());
   lbArray.push(studentObj);
 
   socket.emit("endGame", lbArray)

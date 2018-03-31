@@ -68,15 +68,11 @@ input[type=textarea] {
     clear: right;
 }
 
-#table, #table1 {
+/*#table, #table1 {
     background-color: white;
     border: 2px solid;
     box-shadow: 10px 5px grey;
-}
-
-#createGameBTN {
-    margin-left: 5px;
-}
+}*/
 
 #heading {
     text-align: center;
@@ -92,36 +88,18 @@ input[type=textarea] {
 }
 
 
-#teacherActions form {
-    float:left;
-}
 
-#enterProblemBTN {
+
+/*#enterProblemBTN {
    float:left;
 
-}
+}*/
 
 #leaderboard {
     border:1px;
 }
 
-#studentInfo {
-    background-color:white;
-
-    width:700px;
-    border-radius:10px;
-    padding-left:5px;
-
-    padding-bottom:5px;
-    font-size:;
-}
-
-#studentInfo h4{
-    text-decoration:underline;
-}
-
-
-#wrapper {
+/*#wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
@@ -142,7 +120,4 @@ input[type=textarea] {
     grid-column: 1;
     grid-row:2;
 }
-
-#teacherActions h2{
-    text-decoration:underline;
-}
+*/

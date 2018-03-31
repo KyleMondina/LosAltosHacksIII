@@ -1,0 +1,84 @@
+#teacherWrapper{
+  width:80%;
+  margin-top: 3%;
+  margin-right:10%;
+  margin-left: 10%;
+  height:auto;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+#teacherWrapper #heading{
+  border-style: solid;
+  border-color: black;
+  border-width: 5px;
+  grid-column:1/8;
+  grid-row: 1/2
+}
+
+#teacherActions{
+  border-style: solid;
+  border-color: black;
+  border-width: 5px;
+  grid-column:1/8;
+  grid-row: 2/3
+}
+
+#teacherActions h4{
+  position:relative;
+  left:43%;
+}
+
+#teacherActions #createGameBTN{
+  position:relative;
+  left:50%;
+}
+
+#teacherActions #endGameBTN{
+  position:relative;
+  left:30%;
+}
+
+#calculator{
+  border-style: solid;
+  border-color: black;
+  border-width: 5px;
+  grid-column:4/8;
+  grid-row: 3/4
+}
+
+#teacherInput{
+  border-style: solid;
+  border-color: black;
+  border-width: 5px;
+  grid-column:1/4;
+  grid-row: 3/4;
+  height: 100%
+}
+
+#teacherInput form{
+  position: relative;
+  top: 35%;
+  left: 25%
+}
+
+#teacherInput #enterProblemBTN{
+  position: relative;
+  left: 50%
+}
+
+#output{
+  border-style: solid;
+  border-color: black;
+  border-width: 5px;
+  grid-column:1/8;
+  grid-row: 4/5
+}
+#studentInfo{
+  border-style: solid;
+  border-color: black;
+  border-width: 5px;
+  grid-column:1/8;
+  grid-row: 5/6;
+  background-color:white;
+}

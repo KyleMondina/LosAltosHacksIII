@@ -4,54 +4,51 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link href="../index.css" rel="stylesheet" type="text/css">
+      <link href = "./teacher.css" rel="stylesheet" type="text/css">
       <link href="https://fonts.googleapis.com/css?family=Share" rel="stylesheet">
       <title>Teacher</title>
    </head>
    <body>
-
+     <div id ="teacherWrapper">
       <div id="heading">
          <h1>Teacher</h1>
       </div>
 
       <div id="teacherActions">
-         <h2>Controls</h2>
-         <button id="createGameBTN">Create Game</button>
-         <div id="calculator" style="width: 600px; height: 400px; float: right; clear: right;">
-            <p style="font-size: 15px;">Graphing calculator provided for your convenience.</p>
-         </div>
-
-
-         <button id="resumeGameBTN">Resume Game</button>
+         <h4>Teacher Actions</h4>
+         <button id="createGameBTN">Start Game</button>
          <button id="endGameBTN">End Game</button><br><br>
+      </div>
 
+      <div id="calculator" style="width: 99%; height: 380px; float: right; clear: right;">
+      </div>
+
+       <div id = "teacherInput">
          <form>
             <input type="textarea" id="item"> &nbsp;
          </form>
-
-         <button id="enterProblemBTN" onclick="addRow();">Enter Problem</button> <br>
-         <br>
+         <button id="enterProblemBTN" onclick="addRow();">Enter Problem</button>
+         <button id="recordGraph">Record Graph</button>
       </div>
 
       <div id="output">
+        <h4> Your Problem Below </h4>
+        <div id = "studentProblem">
           <table id="table">
-             <tr>
-                 <th style="text-decoration: underline;">Your problem:</th>
-             </tr>
-         </table>
+          </table>
+        </div>
+        <button id ="submitProblemBTN">Send problem to students</button>
       </div>
-
-      <button id ="submitProblemBTN">Send problem to students</button>
 
       <div id = "studentInfo">
          <h4>Student Info</h4>
-         <p>Student Name:</p>
-         <p id = "studentName">who is this?</p>
+         <p id = "studentName">Student Name: </p>
          <div id ="studentWork"></div>
-
-         Give Score <br>
+         <h3>Give Your Score </h3>
          <input id = "studentScore" ></input>
+         <button id="resumeGameBTN">Grade Student</button>
       </div>
-
+    </div>
    </body>
 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
