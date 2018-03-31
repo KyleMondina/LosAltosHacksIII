@@ -1,0 +1,121 @@
+#studentWrapper{
+  width:80%;
+  margin-top: 3%;
+  margin-right:10%;
+  margin-left: 10%;
+  height:auto;
+  display: grid;
+  grid-gap: 2px;
+  grid-template-columns: repeat(7, 1fr)
+}
+
+#heading{
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+  grid-column: 1/8;
+  grid-row: 1/2
+
+}
+
+#problem{
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+  grid-column: 1/8;
+  grid-row: 2/3
+
+}
+
+#problem h4{
+  position:relative;
+  left: 45%;
+}
+
+#problem table{
+  position:relative;
+  left: 45%;
+}
+
+#studentInfo{
+  padding: 10px;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+  grid-column: 1/8;
+  grid-row: 3/4
+
+}
+
+#studentInfo p{
+  position: relative;
+  left:40%
+}
+
+#studentInfo input{
+  position: relative;
+  height: 40px;
+  left:37%
+}
+
+#input{
+  padding: 10px;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+  grid-column: 1/4;
+  grid-row: 4/5
+
+}
+
+#input form{
+  position: relative;
+  top:25%;
+  left:25%
+}
+
+#input #addText{
+  position: relative;
+  left:25%
+}
+
+#input #record{
+  position: relative;
+  left:30%
+}
+
+
+#studentCalculator{
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+  grid-column: 4/8;
+  grid-row: 4/5
+}
+
+#MathOutput{
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+  grid-column: 1/8;
+  padding: 10px
+
+}
+
+
+#MathOutput h6{
+  position: relative;
+  left:45%
+
+}
+
+#MathOutput #submitAnswerBTN{
+  position: relative;
+  left:43%;
+}
+
+#MathOutput #studentAnswer table{
+  position: relative;
+  left:45%
+
+}

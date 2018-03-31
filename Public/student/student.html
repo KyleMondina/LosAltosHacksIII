@@ -4,19 +4,19 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link href="../index.css" rel="stylesheet" type="text/css">
-      <link herf = "./student.css" rel="stylesheet" type="text/css">
       <link href="https://fonts.googleapis.com/css?family=Share" rel="stylesheet">
+      <link href = "./student.css" rel="stylesheet" type="text/css">
       <title>Student</title>
    </head>
    <body>
-
+     <div id = "studentWrapper">
       <div id="heading">
           <h1>Student</h1>
-          <h1 id ="gameState">Game State</h1>
+          <h4 id ="gameState">Game State</h4>
       </div>
 
       <div id="problem">
-         <h2>Problem:</h2>
+         <h4>Problem:</h4>
       </div>
 
       <div id = "studentInfo">
@@ -24,41 +24,28 @@
          <input id = "studentName" size="40"></input>
       </div>
 
-      <hr>
-
-      <div id="output">
-      </div>
-
-      <div id="textInput">
-         <div id="desmos" style="width: 600px; height: 400px;">
-            <p style="font-size: 15px;" >Graphing calculator provided for your convenience.</p>
-         </div>
-         <h2>Input your Answer</h2>
-         <button onclick="clickMe(); ">Record Graph</button>
-         <p id="paragraph"></p>
-      </div>
-
       <div id ="input">
          <form>
             <input type="textarea" name="Enter equation here" id="item"/>
          </form>
          <button id="addText" onclick="addRow();" id="MathInput" size="50" onchange="UpdateMath(this.value)">Enter answer</button>
+         <button id = "record" onclick="clickMe(); ">Record Graph</button>
       </div>
 
-      <br>
+      <div id = "studentCalculator">
+        <div id="desmos" style="width: 100%; height: 400px;">
+        </div>
+      </div>
 
       <div id="MathOutput">
-         <table id="table1">
-             <tr>
-                 <th style="text-decoration: underline;">Answers</th>
-             </tr>
-         </table>
-      </div>
-
-      <div id="input">
+         <h6>Preview Answer</h6>
+         <div id = "studentAnswer">
+           <table id="table1">
+           </table>
+        </div>
          <button id="submitAnswerBTN">Submit Your Answers</button>
       </div>
-
+    </div>
    </body>
 
    <script src="https://www.desmos.com/api/v1.0/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>

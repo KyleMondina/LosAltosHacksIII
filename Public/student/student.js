@@ -1,63 +1,43 @@
 const LOCAL = 'http://localhost:4000';
 
-
-
 function clickMe(){
-                var thumbnail = calculator.screenshot({
-                width: 200,
-                height: 200,
-                targetPixelRatio: 2
-                                    });
 
-// Append the thumbnail image to the current page
-var img = document.createElement('img');
-// Note: if width and height are not set, the thumbnail
-// would display at 400px by 400px since it was captured
-// with targetPixelRatio: 2.
-img.width = 50;
-img.height = 50;
-img.src = thumbnail;
+    let thumbnail = calculator.screenshot({
+      width: 200,
+      height: 200,
+      targetPixelRatio: 2
+    });
+    // Append the thumbnail image to the current page
+    let img = document.createElement('img');
+    // Note: if width and height are not set, the thumbnail
+    // would display at 400px by 400px since it was captured
+    // with targetPixelRatio: 2.
+    img.width = 50;
+    img.height = 50;
+    img.src = thumbnail;
 
-
-    var table = document.getElementById("table1");
-
-    var row= document.createElement("tr");
+    let table = document.getElementById("table1");
+    let row= document.createElement("tr");
     console.log(row);
-    var td1 = document.createElement("td");
-
+    let td1 = document.createElement("td");
 
     td1.innerHTML = `<img src=${thumbnail}></img>`;
-
-row.appendChild(td1)
-
-
+    row.appendChild(td1)
     table.children[0].appendChild(row);
-
-
-
 }
-
-
-
-
 
 
 function addRow() {
    "use strict";
+    let table = $("#MathOutput").find("#table1");
 
-    var table = document.getElementById("table1");
-
-    var row= document.createElement("tr");
+    let row= document.createElement("tr");
     console.log(row);
-    var td1 = document.createElement("td");
-
+    let td1 = document.createElement("td");
     td1.innerHTML = document.getElementById("item").value;
 
-
     row.appendChild(td1);
-
-
-    table.children[0].appendChild(row);
+    table.append(row);
 
     setTimeout(function () {
          var script = document.createElement("script");
@@ -78,22 +58,11 @@ function addRow() {
 }
 
 
-
-
-function addInput(){
-    const element = $("#input").find('input').val();
-    const output  = $("#output");
-
-    output.appendChild(`<p> ${element}</p>`);
-}
-
-
-
 //Socket functions
 const socket = io.connect(LOCAL);
 
 //buttons and headers
-const submitAnswerBTN = $("#submitAnswerBTN");
+const submitAnswerBTN = $("#MathOutput").find("#submitAnswerBTN");
 const gameState = $("#heading").find("#gameState");
 //default behavior
 submitAnswerBTN.prop("disabled",true);
@@ -102,7 +71,7 @@ gameState.html("Game Did Not Start Yet");
 //emit
 submitAnswerBTN.click(() =>{
     const studentName = $("#studentInfo").find("#studentName").val();
-    const studentAnswer = $("#MathOutput").html();
+    const studentAnswer = $("#MathOutput").find("#studentAnswer").html();
     socket.emit('answerSubmited', {studentAnswer,studentName});
 });
 

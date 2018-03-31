@@ -5,21 +5,23 @@
   margin-left: 10%;
   height:auto;
   display: grid;
+  grid-gap: 2px;
   grid-template-columns: repeat(7, 1fr);
 }
 
 #teacherWrapper #heading{
   border-style: solid;
   border-color: black;
-  border-width: 5px;
+  border-width: 2px;
   grid-column:1/8;
   grid-row: 1/2
 }
 
 #teacherActions{
+  background-color: #ddd;
   border-style: solid;
   border-color: black;
-  border-width: 5px;
+  border-width: 2px;
   grid-column:1/8;
   grid-row: 2/3
 }
@@ -35,6 +37,7 @@
 }
 
 #teacherActions #endGameBTN{
+
   position:relative;
   left:30%;
 }
@@ -42,15 +45,16 @@
 #calculator{
   border-style: solid;
   border-color: black;
-  border-width: 5px;
+  border-width: 2px;
   grid-column:4/8;
   grid-row: 3/4
 }
 
 #teacherInput{
+  background-color: #ddd;
   border-style: solid;
   border-color: black;
-  border-width: 5px;
+  border-width: 2px;
   grid-column:1/4;
   grid-row: 3/4;
   height: 100%
@@ -68,16 +72,17 @@
 }
 
 #output{
+  background-color: white;
   border-style: solid;
   border-color: black;
-  border-width: 5px;
+  border-width: 2px;
   grid-column:1/8;
   grid-row: 4/5
 }
 #studentInfo{
   border-style: solid;
   border-color: black;
-  border-width: 5px;
+  border-width: 2px;
   grid-column:1/8;
   grid-row: 5/6;
   background-color:white;
