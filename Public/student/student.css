@@ -64,7 +64,8 @@
   border-color: black;
   border-width: 2px;
   grid-column: 1/4;
-  grid-row: 4/5
+  grid-row: 4/5;
+  padding: 10px
 
 }
 

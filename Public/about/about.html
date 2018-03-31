@@ -21,20 +21,23 @@
       </div>
 
 
-      <div id = "appInfo">
-    <h1>Patriotic Pirates</h1>
-    <p>Patriotic Pirates is a web app created at Los Altos Hacks 2018. We came up with Patriotic Pirates, a name based on our school mascots. This app was created in order to address the problem of multiple choice questions.  We believed that these questions were too rigid and limited and neglected to address skills such as problem-solving or critical thinking. In order to better able measure their students’ current progress, this app allows teachers to create open ended questions. These questions require students to formulate an argument in support of their answer. Rather than providing a  setted yes or no response, students are now able to demonstrate their understanding of the course through a thoughtful and well-explained answer.</p>
-
-    <h1>Tools and Technologies</h1>
-        <p>The tools and technologies used to build this app were Desmos, MathJax, and Socket.io. Desmos allow students to create graphs and record them in their workspace. MathJax renders complex math equations, displaying them as readable text. Socket.io transfers from one client to another</p>
-      </div>
-
-
-
-
-
-
-   </body>
+    <div id = "appInfo">
+      <h1>Patriotic Pirates</h1>
+      <p>Our app is an educational platform where teachers can create multiplayer math competitions. Similar to Kahoot and Quizlet Live, students can use their computer  in order to participate in a game session. However, rather than consisting of a series of multiple choice questions, it provides free response questions where students must show their work in order to support their answer. Teachers can evaluate the responses based on their explanation and answer, allowing them to better assess their students’ progress in the classroom. After the game is over, a leaderboard displays the top students’ name and score, promoting healthy competition among students.</p>
+      <h1>Tools and Technologies</h1>
+      <p>We employed a diverse set of technologies in order to create this app. For the frontend, we implemented the MathJax javaScript display engine and the Desmos API. Mathjax was used to render beautiful math symbols in html with LaTex as input. Desmos provided an interactive graph that the teacher and student can use in creating or solving the problems. For the backend, we used Node.js. The Express framework handled the routing of the app’s webpage. Socket.io enabled participation from multiple students in a single game session.
+      </p>
+      <h1>How to play</h1>
+      <ol>
+        <li>Teacher will click "star game"</li>
+        <li>Teacher will write the problem using laTex or the calculator which will then appear on the bottom </li>
+        <li>Teacher will then send the problem</li>
+        <li>Student will solve the problem</li>
+        <li>After student submits, game is paused until the teacher grades the work</li>
+        <li>Game ends when teacher clicks "end game"</li>
+      </ol>
+    </div>
+  </body>
    <script src = './student.js'></script>
    <script src = '../mathJax.js'></script>
 </html>
