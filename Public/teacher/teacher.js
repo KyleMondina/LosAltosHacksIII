@@ -1,4 +1,5 @@
 const LOCAL = 'http://localhost:4000';
+let nameOfStudent = "";
 
 function addRow() {
    "use strict";
@@ -57,12 +58,14 @@ resumeGameBTN.click(() => {
     const studentScore = $("#studentInfo").find("#studentScore");
     const studentWork = $("#studentInfo").find("#studentWork");
 
-    const studentObj = student(studentName.text(),studentScore.val());
+    nameOfStudent = studentName.text();
+    const studentObj = student(nameOfStudent,studentScore.val());
     lbArray.push(studentObj);
 
     studentName.html("Student Name: ");
     studentScore.val("");
     studentWork.html("");
+    nameOfStudent = "";
 
     socket.emit("resumeGame", lbArray);
 });
@@ -71,7 +74,7 @@ endGameBTN.click(() => {
   const studentName = $("#studentInfo").find("#studentName");
   const studentScore = $("#studentInfo").find("#studentScore");
   const studentWork = $("#studentInfo").find("#studentWork");
-  const studentObj = student(studentName.text().slice(14),studentScore.val());
+  const studentObj = student(studentName.text().slice(),studentScore.val());
   lbArray.push(studentObj);
 
   socket.emit("endGame", lbArray)

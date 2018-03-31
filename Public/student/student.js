@@ -2,7 +2,7 @@ const LOCAL = 'http://localhost:4000';
 
 function clickMe(){
 
-    let thumbnail = calculator.screenshot({
+    let thumbnail = calculator1.screenshot({
       width: 200,
       height: 200,
       targetPixelRatio: 2
@@ -16,14 +16,14 @@ function clickMe(){
     img.height = 50;
     img.src = thumbnail;
 
-    let table = document.getElementById("table1");
+    let table = $("#MathOutput").find("#studentAnswer").find("#table1")
     let row= document.createElement("tr");
     console.log(row);
     let td1 = document.createElement("td");
 
     td1.innerHTML = `<img src=${thumbnail}></img>`;
     row.appendChild(td1)
-    table.children[0].appendChild(row);
+    table.append(row);
 }
 
 
