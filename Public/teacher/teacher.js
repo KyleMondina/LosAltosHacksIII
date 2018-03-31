@@ -102,7 +102,8 @@ endGameBTN.click(() => {
   ),studentScore.val());
   lbArray.push(studentObj);*/
 
-  socket.emit("endGame", lbArray)
+  socket.emit("endGame", lbArray);
+
 });
 
 //listen
