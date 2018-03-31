@@ -5,37 +5,39 @@ const socket = io.connect(LOCAL);
 socket.emit('leaderBoardLoaded');
 socket.on('winnerDataSent', data => lbArray = data);
 
+
+
 function clickMe(){
-   // var nestedArray=[{name:"Bob", score:3}, {name: "Sally", score:5}];
   var nestedArray=lbArray;
-    for (var i = 0; i < nestedArray.length; i++) {
-        document.writeln("<tr>");
-        document.writeln("<td>");
-         document.writeln(nestedArray[i].name);
-        document.writeln(nestedArray[i].score) + "<br>";
-        document.writeln("</td>");
-        document.writeln("</tr>");
-    }
- }
+  
+  
+  nestedArray.sort(function(a, b){ return b.score - a.score });
+
+  var leaderBoard = "<table>";
+leaderBoard+="<th>Name</th>";
+leaderBoard+="<th>Score</th>";
+
+  for (var i = 0; i < nestedArray.length; i++) {
+      leaderBoard+="<tr>";
+      leaderBoard+="<td>"+nestedArray[i].name+"</td>";
+      leaderBoard+="<td>"+nestedArray[i].score+"</td>";
+     
+      
+      leaderBoard+="</tr>";
+
+  }
+  leaderBoard+="</table>";
+  
+
+document.getElementById("leaderBoardBox").innerHTML = leaderBoard;
+}
+
 
  function check(){
      alert(lbArray);
  }
 
-function sort(array){
-  for (let i = 0; i<array.length; i++){
-    let max = i;
-    for (let j=i+1;j<array.length;j++){
-      if (array[j].score > array[max].score) max = j;
-    }
-    if (i != max){
-      let temp = array[i]
-      array[i] = array[max]
-      array[max] = temp;
-    }
-  }
-};
 
 
 
-//socket commands
+
