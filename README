@@ -1,1 +1,19 @@
-This is our submission to Los Altos Hacks. It is a web app that utlizes Desmos API to display graphs and MathJax libraries to convert Latex symbols to readable HTML.
+#Patriotic Pirates
+Our app is an educational platform where teachers can create multiplayer math competitions. Similar to Kahoot and Quizlet Live, students can use their computer  in order to participate in a game session. However, rather than consisting of a series of multiple choice questions, it provides free response questions where students must show their work in order to support their answer. Teachers can evaluate the responses based on their explanation and answer, allowing them to better assess their students’ progress in the classroom. After the game is over, a leaderboard displays the top students’ name and score, promoting healthy competition among students.
+
+#Contributers
+*Alan: Front-End css
+*Aaron: Front-End css
+*Perry: Front-End javascript, integrated desmos API (calculator) and MathJax (math rendering)
+*Kyle: Back-End nodeJs, handled routing and the transfer of data between clients
+
+#Tools and Technologies
+We employed a diverse set of technologies in order to create this app. For the frontend, we implemented the MathJax javaScript display engine and the Desmos API. Mathjax was used to render beautiful math symbols in html with LaTex as input. Desmos provided an interactive graph that the teacher and student can use in creating or solving the problems. For the backend, we used Node.js. The Express framework handled the routing of the app’s webpage. Socket.io enabled participation from multiple students in a single game session.
+
+#How to play
+1. Teacher will click "start game"
+2. Teacher will write the problem using laTex or the calculator which will then appear on the bottom
+3. Teacher will then send the problem
+4. Student will solve the problem
+5. After student submits, game is paused until the teacher grades the work
+6. Game ends when teacher clicks "end game"
